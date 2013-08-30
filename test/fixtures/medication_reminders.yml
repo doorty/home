@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  medication_id: 
+  day_of_the_week: 1
+  time_of_day: 2013-05-29 19:31:45
+  reoccurs: false
+
+two:
+  medication_id: 
+  day_of_the_week: 1
+  time_of_day: 2013-05-29 19:31:45
+  reoccurs: false

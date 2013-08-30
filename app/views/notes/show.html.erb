@@ -1,0 +1,9 @@
+<h1>Note</h1>
+
+<p>
+  <strong>Content:</strong>
+  <%= @note.content %>
+</p>
+
+<%= link_to 'Edit', edit_care_circle_note_path(@care_circle, @note) %> |
+<%= link_to 'Back', care_circle_notes_path(@care_circle) %>

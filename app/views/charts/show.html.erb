@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Care circle:</strong>
+  <%= @chart.care_circle %>
+</p>
+
+<%= link_to 'Edit', edit_care_circle_chart_path(@care_circle,@chart) %> |
+<%= link_to 'Back', care_circle_charts_path %>

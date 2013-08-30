@@ -1,0 +1,37 @@
+<h1>Charts</h1>
+
+<% if (@charts.length == 0) then %>
+
+ <p>There are no charts.</p>
+ 
+<% else %>
+
+	<table>
+	  <thead>
+	    <tr>
+	      <th>Care circle</th>
+	      <th></th>
+	      <th></th>
+	      <th></th>
+	    </tr>
+	  </thead>
+	
+	  <tbody>
+	    <% @charts.each do |chart| %>
+	      <tr>
+	        <td><%= chart.care_circle %></td>
+	        <td><%= link_to 'Show', [@care_circle, chart] %></td>
+	        <td><%= link_to 'Edit', edit_care_circle_chart_path(chart) %></td>
+	        <td><%= link_to 'Destroy', care_circle_chart_path(@care_circle, chart), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	      </tr>
+	    <% end %>
+	  </tbody>
+	</table>
+	
+	<%= link_to 'New Chart', new_care_circle_chart_path(@care_circle) %>
+
+<% end %>
+
+<br>
+
+

@@ -1,0 +1,45 @@
+// Place all the styles related to the Dashboard controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body.dashboard {
+	padding-top:10px;
+
+
+  .main-logo {
+    a:hover {
+      color:#08c;
+      text-decoration: none;
+    }
+  }
+  
+  #call-case-manager-desktop {
+    .number {
+      display: none;
+    }
+    .call {
+      display: inline;
+    }
+    &.number {
+      .number {
+        display: inline;
+      }
+      .call {
+        display: none;
+      }
+    }
+  }
+  
+  .footer {
+	  .copyright {
+	  	//float:left;
+		  //width:33%;
+	  }
+	  .sign-out {
+		  //float:right;
+		  //text-align: right;
+		  //width:33%;
+	  }
+  }
+  
+}

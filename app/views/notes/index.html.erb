@@ -1,0 +1,36 @@
+<h1>Notes</h1>
+
+<% if (@notes.length == 0) then %>
+
+ <p>There are no notes.</p>
+ 
+<% else %>
+  <table class="table table-hover medication-table-list">
+    <thead>
+      <tr>
+        <th>Content</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <% @notes.each do |note| %>
+        <tr>
+          <td><%= note.content %></td>
+          <td><%= link_to 'Show', [@care_circle, note] %></td>
+          <td><%= link_to 'Edit', edit_care_circle_note_path(@care_circle,note) %></td>
+          <td><%= link_to 'Destroy', [@care_circle, note], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+<% end %>
+
+<br>
+
+<%= link_to( new_care_circle_note_path(@care_circle), { :class=> "btn" } ) do %>
+  <i class="icon-plus"></i> New Note
+<% end %>

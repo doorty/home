@@ -1,0 +1,1 @@
+class Activity < Struct.new(:title, :text, :date); end

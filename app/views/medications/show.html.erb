@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Care circle:</strong>
+  <%= @medication.care_circle %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @medication.name %>
+</p>
+
+<%= link_to 'Edit', edit_care_circle_medication_path(@care_circle,@medication) %> |
+<%= link_to 'Back', care_circle_medications_path(@care_circle) %>

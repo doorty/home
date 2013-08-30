@@ -1,0 +1,30 @@
+<div id="new-appointment-form">
+	<%= simple_form_for [@care_circle, @appointment] do |f| %>
+	  <% if @appointment.errors.any? %>
+	    <div id="error_explanation">
+	      <h2><%= pluralize(@appointment.errors.count, "error") %> prohibited this appointment from being saved:</h2>
+	
+	      <ul>
+	      <% @appointment.errors.full_messages.each do |msg| %>
+	        <li><%= msg %></li>
+	      <% end %>
+	      </ul>
+	    </div>
+	  <% end %>
+	  
+	  <%= f.input :title %>
+	  
+  	<%= f.label :date %>
+  	<div class="input-append datetimeinput-wrapper">
+      <%= f.input_field :date, as: :string, :class=> "datepicker", :data => {:datepicker => :datepicker, :format => "MM/dd/yyyy HH:mm PP"} %>
+      <span class="add-on">
+        <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+      </span>
+    </div>
+	
+
+	  <div class="form-actions">
+	    <%= f.button :submit, { :class => "btn" } %>
+	  </div>
+	<% end %>
+</div>

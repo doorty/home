@@ -1,0 +1,25 @@
+<h1>Dashboard#index <%= @test %></h1>
+
+<% @care_circles.each do |cc| %>
+	<p>
+		Users: 
+		<% cc.users.each do |user| %>
+			<%= user.email %>
+		<% end %>
+	</p>
+<% end %>
+
+
+<div id="new-status">
+<%= form_for([@care_cirlce, @care_circle.statuses.build(:care_circle_id => @care_circle.id)]) do |f| %>
+	<%= f.fields_for :status do |builder| %>
+	  <div class="field">
+	    <%= builder.label :message %><br />
+	    <%= builder.text_area :message %>
+	  </div>
+	<% end %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+</div>

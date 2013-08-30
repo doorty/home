@@ -1,0 +1,76 @@
+<div class="row-fluid">
+
+	<div class="span5">				
+					
+		<h2>Send Invitations</h2>
+		
+		<%= simple_form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => {:method => :post} do |f| %>
+		  <%= devise_error_messages! %>
+		
+			<% resource.class.invite_key_fields.each do |field| -%>
+			  <%= f.input field, :input_html => { :class=> "input-xlarge" }, :as => "text", :label => "Emails", :hint => "Seperate emails by a comma", :placeholder => "email@domain.com, another@email.com, etc." %>		 	
+			<% end %>
+		
+			<div class="controls">
+				<label>Phone</label>
+				<textarea class="text optional input-xlarge" id="user_phone" name="user[phone]" placeholder="(515) 256-5500, (515) 555-4352, etc."></textarea>
+				<p class="help-block">Seperate phone numbers by a comma</p>
+			</div>
+		
+		  <div class="form-actions">
+		    <%= f.submit "Send invitations", { :class => "btn" } %>
+		  </div>
+		<% end %>
+	
+	</div>
+	
+	<div class="span1" style="height: 350px;margin-top:40px;">
+		<%= image_tag("/images/vertical-divider-or.gif", :style => "padding-left:5px;") %>
+	</div>
+
+	<div class="span6">
+	
+		<h2>Import Friends & Family</h2>
+		<%- if friends = current_user.fb_friends %>
+			<%= form_tag "invite_fb_friends" do %>
+				<div style="height:300px; overflow:auto;">
+				
+					<%- friends.each do |friend| %>
+					
+						<div class="media">
+							<a class="pull-left" href="#">
+								<%= check_box_tag "friends", friend["id"] %> <%= image_tag("http://graph.facebook.com/#{friend['id']}/picture") %>
+							</a>
+							<div class="media-body">
+								<h5 class="media-heading" style="padding-top: 14px;"><%= friend["name"] %></h5>
+							</div>
+						</div>
+						
+					<% end -%>
+					
+				</div>
+				
+				<div class="form-actions">
+					<%= submit_tag "Send invitations", { :class => "btn" } %>
+				</div>
+			<% end %>
+		<%- elsif %>
+		  <%- resource_class.omniauth_providers.each do |provider| %>
+		  	<div class="row">
+			  	<% #provider.to_s.titleize %>
+			    <%= link_to omniauth_authorize_path(resource_name, provider), :class => "btn btn-primary span9 offset1" do %>
+			    	<i class="icon-facebook-sign icon-large"></i> Facebook
+			    <% end %>
+		  	</div>
+		  	<div class="row" style="padding-top:10px">
+			    <%= link_to 'javascript:alert("Not working. Try Facebook instead.")', :class => "btn span9 offset1" do %>
+			    	<i class="icon-google-plus-sign icon-large"></i> Google
+			    <% end %>
+		  	</div>
+		<% end -%>
+		  
+		<% end -%>
+
+	</div>
+
+</div><!-- row -->

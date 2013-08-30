@@ -1,0 +1,81 @@
+<h1>Medications</h1>
+
+<% if (@medications.length == 0 && @care_circle.doctors.length == 0) then %>
+
+ <p>Try <%= link_to "adding a doctor", new_care_circle_doctor_path(@care_circle) %> then add a medication.</p>
+ 
+<% elsif (@medications.length == 0) then %>
+
+ <p>There are no medications.</p>
+ 
+<% else %>
+
+  <table class="table table-hover medication-table-list">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Strength</th>
+        <th>Dosage</th>
+        <th>Doctor</th>
+        <th>
+          <table>
+            <thead>
+              <tr>
+                <th>Days</th>
+                <th>Time</th>
+              </tr>
+            </thead>
+          </table>
+        </th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <% @medications.each do |medication| %>
+        <tr>
+          <td><%= medication.name %></td>
+          <td><%= medication.strength %></td>
+          <td><%= medication.dosage %></td>
+          <td>
+          	<%= link_to_if(medication.doctor_id, Doctor.find(medication.doctor_id).try(:name), [@care_circle, Doctor.find(medication.doctor_id)]) %>
+          </td>
+          <td>
+            <table>
+              <tbody>
+                <% medication.medication_reminders.each do |reminder| %>
+                <tr>
+                  <td>
+                    <%= reminder.monday ? "Monday" : "" %>
+                    <%= reminder.tuesday ? "Tuesday" : "" %>
+                    <%= reminder.wednesday ? "Wednesday" : "" %>
+                    <%= reminder.thursday ? "Thursday" : "" %>
+                    <%= reminder.friday ? "Friday" : "" %>
+                    <%= reminder.saturday ? "Saturday" : "" %>
+                    <%= reminder.sunday ? "Sunday" : "" %>
+                  </td>
+                  <td>
+                    <%= reminder.time.strftime('%l:%M %p') if reminder.time %>
+                  </td>
+                </tr>
+               <% end %> 
+              </tbody>
+            </table>
+          </td>
+          <td><%= link_to 'Show', [@care_circle, medication] %></td>
+          <td><%= link_to 'Edit', edit_care_circle_medication_path(@care_circle, medication) %></td>
+          <td><%= link_to 'Destroy', care_circle_medication_path(@care_circle, medication), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+<% end %>
+
+<br>
+
+<%= link_to( new_care_circle_medication_path(@care_circle), { :class=> "btn" } ) do %>
+  <i class="icon-plus"></i> New Medication
+<% end %>

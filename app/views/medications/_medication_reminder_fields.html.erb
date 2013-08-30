@@ -1,0 +1,19 @@
+<fieldset>
+  <%= f.input :monday, :as => :boolean, :label => false, :inline_label => true %>
+  <%= f.input :tuesday, :as => :boolean, :label => false, :inline_label => true %>
+  <%= f.input :wednesday, :as => :boolean, :label => false, :inline_label => true %>
+  <%= f.input :thursday, :as => :boolean, :label => false, :inline_label => true %>
+  <%= f.input :friday, :as => :boolean, :label => false, :inline_label => true %>
+  <%= f.input :saturday, :as => :boolean, :label => false, :inline_label => true %>
+  <%= f.input :sunday, :as => :boolean, :label => false, :inline_label => true %>
+  
+  <%= f.label :time %>
+  	<div class="input-append timeinput-wrapper">
+      <%= f.input_field :time, as: :string, :class=> "datepicker", :data => {:datepicker => :datepicker, :format => "HH:mm PP"} %>
+      <span class="add-on">
+        <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+      </span>
+    </div>
+	<%= f.hidden_field :_destroy %>
+  <%= link_to "remove", '#', class: "remove_fields" %>
+</fieldset>

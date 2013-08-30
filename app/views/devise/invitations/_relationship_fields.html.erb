@@ -1,0 +1,4 @@
+<div class="field">
+	<%= f.label :relationship_type, "Relationship to Member" %><br />
+	<%= f.select :relationship_type, RelationshipType.all.collect { |r| [ r.name, r.id ] } %><br />
+</div>

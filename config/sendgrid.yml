@@ -1,0 +1,20 @@
+development:
+  user_name: 'doorty'
+  password: 'tennis49ball'
+  domain: 'senior-serve.com'
+  address: 'smtp.sendgrid.net'
+  port: 587
+
+test:
+  user_name: 'doorty'
+  password: 'tennis49ball'
+  domain: 'senior-serve.com'
+  address: 'smtp.sendgrid.net'
+  port: 587
+
+production:
+  user_name: 'doorty'
+  password: 'tennis49ball'
+  domain: 'senior-serve.com'
+  address: 'smtp.sendgrid.net'
+  port: 587

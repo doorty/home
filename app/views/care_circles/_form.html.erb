@@ -1,0 +1,23 @@
+<%= simple_form_for(@care_circle) do |f| %>
+  <% if @care_circle.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@care_circle.errors.count, "error") %> prohibited this care_circle from being saved:</h2>
+
+      <ul>
+      <% @care_circle.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="new-relationship">
+  	<%= f.fields_for :relationship do |builder| %>
+			<%= render "relationship_fields", :f => builder %>
+  	<% end %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit %>
+  </div>
+<% end %>
