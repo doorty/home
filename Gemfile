@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
@@ -34,9 +35,10 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 
 # Authentication & Authorization
-gem 'devise', github: 'plataformatec/devise', branch: 'rails4'
-gem 'devise_invitable', github: 'scambra/devise_invitable', branch: 'rails4'
-gem 'cancan'
+gem 'devise'
+#gem 'devise_invitable'
+gem 'devise_invitable', :github => 'scambra/devise_invitable'
+#gem 'cancan'
 
 gem 'omniauth-facebook'
 gem 'koala'
