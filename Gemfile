@@ -43,7 +43,6 @@ gem 'jquery-rails'
 gem 'devise'
 #gem 'devise_invitable'
 gem 'devise_invitable', :github => 'scambra/devise_invitable'
-#gem 'cancan'
 
 gem 'omniauth-facebook'
 gem 'koala'
