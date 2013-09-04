@@ -6,11 +6,6 @@ class ApplicationController < ActionController::Base
   # Devise user accounts
   #before_filter :configure_permitted_parameters, if: :devise_controller?
   
-  # Not authorized to view page
-  rescue_from CanCan::AccessDenied do |exception|
-    flash[:error] = exception.message
-    redirect_to root_url
-  end
   
   private
 
