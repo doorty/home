@@ -1,5 +1,7 @@
 Src::Application.routes.draw do
 
+  resources :caregivers
+
   # You can have the root of your site routed with "root"
   root 'welcome#index'
   get 'care_circles' => 'care_circles#index', as: :user_root
@@ -11,7 +13,7 @@ Src::Application.routes.draw do
 	get "auth/:provider/callback", to: "sessions#create"
   get "auth/failure", to: redirect("/")
   #get "signout", to: "sessions#destory", as: "signout"
-  
+    
   #devise_for :users
   devise_for :users, :controllers => {
   	:registrations => "users/registrations",

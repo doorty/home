@@ -5,7 +5,7 @@ class MedicationsController < ApplicationController
   # GET /medications
   # GET /medications.json
   def index
-    @medications = @care_circle.medications.all
+    @medications = @care_circle.medications
   end
 
   # GET /medications/1
@@ -76,6 +76,6 @@ class MedicationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def medication_params
-      params.require(:medication).permit(:name, :strength, :dosage, :doctor_id, medication_reminders_attributes: [:monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday, :time])
+      params.require(:medication).permit(:name, :strength, :dosage, :doctor_id, medication_reminders_attributes: [:id, :_destroy, {:days => []}, :time])
     end
 end

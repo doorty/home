@@ -24,7 +24,7 @@
 	
 	</div>
 	
-	<div class="span1" style="height: 350px;margin-top:40px;">
+	<div class="span1 visible-desktop" style="height: 350px;margin-top:40px;">
 		<%= image_tag("/images/vertical-divider-or.gif", :style => "padding-left:5px;") %>
 	</div>
 
@@ -38,11 +38,15 @@
 					<%- friends.each do |friend| %>
 					
 						<div class="media">
-							<a class="pull-left" href="#">
-								<%= check_box_tag "friends", friend["id"] %> <%= image_tag("http://graph.facebook.com/#{friend['id']}/picture") %>
+							<a class="pull-left" href="#" style="margin-right:0">
+								<div class="thumbnail pull-left" style="">
+									<%= image_tag("http://graph.facebook.com/#{friend['id']}/picture") %>
+								</div>
 							</a>
-							<div class="media-body">
-								<h5 class="media-heading" style="padding-top: 14px;"><%= friend["name"] %></h5>
+							<div class="media-body" style="padding-left:8px;border-bottom:1px solid #ddd;">
+								<h5 class="media-heading" style="padding-top:18px">
+									<%= check_box_tag "friends", friend["id"], false, {:style => "margin:4px 5px 8px 0;"} %> <%= friend["name"] %>
+								</h5>
 							</div>
 						</div>
 						

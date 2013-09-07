@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @caregiver.email %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @caregiver.name %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @caregiver.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @caregiver.state %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @caregiver.zip %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @caregiver.description %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @caregiver.age %>
+</p>
+
+<p>
+  <strong>Years of experience:</strong>
+  <%= @caregiver.years_of_experience %>
+</p>
+
+<p>
+  <strong>Occupation:</strong>
+  <%= @caregiver.occupation %>
+</p>
+
+<p>
+  <strong>Insured:</strong>
+  <%= @caregiver.insured %>
+</p>
+
+<p>
+  <strong>Bonded:</strong>
+  <%= @caregiver.bonded %>
+</p>
+
+<p>
+  <strong>Reviewed:</strong>
+  <%= @caregiver.reviewed %>
+</p>
+
+<%= link_to 'Edit', edit_caregiver_path(@caregiver) %> |
+<%= link_to 'Back', caregivers_path %>

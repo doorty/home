@@ -1,0 +1,84 @@
+<h1>Des Moines, IA Caregivers</h1>
+
+<form class="form-inline">
+  <input type="text" placeholder="Des Moines, IA">
+  <select id="gender-select">
+	  <option>Gender</option>
+	  <option>Male</option>
+	  <option>Female</option>
+	</select>
+	<select id="language-select">
+	  <option>Language</option>
+	  <option>English</option>
+	  <option>Spanish</option>
+	  <option>Chinese</option>
+	</select>
+<!--
+  <label class="checkbox">
+    <input type="checkbox"> Remember me
+  </label>
+-->
+  <button type="submit" class="btn">Search</button>
+</form>
+
+<% @caregivers.each do |caregiver| %>
+	
+	<hr>
+	
+	<div class="row-fluid">
+
+		<div class="span3">
+			<div class="thumbnail" style="border:0;">
+	      <img src="http://placehold.it/175x175" alt="">
+	      <h5>Insured <span class="pull-right">
+	      	<% if caregiver.insured then %>
+	      		<i class="icon-check icon-large" style="color:green;"></i>
+	      	<% else %>
+	      		<i class="icon-check-empty icon-large" style="color:red;"></i>
+	      	<% end %>
+	      </span></h5>
+	      <h5>Bonded <span class="pull-right">
+	      	<% if caregiver.bonded then %>
+	      		<i class="icon-check icon-large" style="color:green;"></i>
+	      	<% else %>
+	      		<i class="icon-check-empty icon-large" style="color:red;"></i>
+	      	<% end %>
+	      </span></h5>
+	      <h5>Reviewed 
+	      	<span class="pull-right">
+	      	<% if caregiver.reviewed then %>
+	      		<i class="icon-check icon-large" style="color:green;"></i>
+	      	<% else %>
+	      		<i class="icon-check-empty icon-large" style="color:red;"></i>
+	      	<% end %>
+	      </span></h5>
+	    </div>
+		</div>
+
+		<div class="span6">
+			<h4><%= caregiver.name %></h4>
+			<p><%= caregiver.city %>, <%= caregiver.state %> (<%= caregiver.zip %>)</p>
+			<p><%= caregiver.description %>...</p>
+			<p><%= link_to 'Read More', '#' %>
+			<p><button class="btn btn-large btn-block btn-info" type="button">Learn more about <%= caregiver.name %></button></p>
+		</div>
+		
+		<div class="span3">
+	    <p><small><%= caregiver.age %> years old</small></p>
+	    <p><small><%= caregiver.years_of_experience %> year<%= caregiver.years_of_experience == 1 ? "" : "s" %> of experience</small></p>
+	    <p><small><%= caregiver.occupation %></small></p>
+		</div>
+		
+		<!--
+	    <%= link_to 'Show', caregiver %>
+	    <%= link_to 'Edit', edit_caregiver_path(caregiver) %>
+	    <%= link_to 'Destroy', caregiver, method: :delete, data: { confirm: 'Are you sure?' } %>
+		-->
+		
+	</div>
+
+<% end %>
+ 
+<!--
+<%= link_to 'New Caregiver', new_caregiver_path %>
+-->

@@ -1,19 +1,20 @@
 <fieldset>
-  <%= f.input :monday, :as => :boolean, :label => false, :inline_label => true %>
-  <%= f.input :tuesday, :as => :boolean, :label => false, :inline_label => true %>
-  <%= f.input :wednesday, :as => :boolean, :label => false, :inline_label => true %>
-  <%= f.input :thursday, :as => :boolean, :label => false, :inline_label => true %>
-  <%= f.input :friday, :as => :boolean, :label => false, :inline_label => true %>
-  <%= f.input :saturday, :as => :boolean, :label => false, :inline_label => true %>
-  <%= f.input :sunday, :as => :boolean, :label => false, :inline_label => true %>
-  
-  <%= f.label :time %>
+
+	<%= f.label :time %> 
   	<div class="input-append timeinput-wrapper">
-      <%= f.input_field :time, as: :string, :class=> "datepicker", :data => {:datepicker => :datepicker, :format => "HH:mm PP"} %>
+      <%= f.input_field :time, as: :string, :class=> "datepicker", :placeholder => "12:00 PM", :data => {:datepicker => :datepicker, :format => "HH:mm PP"} %>
       <span class="add-on">
         <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
       </span>
     </div>
-	<%= f.hidden_field :_destroy %>
-  <%= link_to "remove", '#', class: "remove_fields" %>
+
+	<%= f.input :days, :collection => MedicationReminder.days_of_the_week, :as => :check_boxes, :item_wrapper_class => 'inline' %>
+  
+  <%= f.hidden_field :_destroy %>
+	<%= link_to('#', class: "remove_fields btn btn-danger btn-mini") do %>
+		<i class="icon-remove"></i> Remove medication time
+	<% end %>
+	
+	<hr>
+	
 </fieldset>

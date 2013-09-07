@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130822031731) do
+ActiveRecord::Schema.define(version: 20130906201749) do
 
   create_table "appointments", force: true do |t|
     t.integer  "care_circle_id"
@@ -34,6 +34,25 @@ ActiveRecord::Schema.define(version: 20130822031731) do
   add_index "authentications", ["user_id"], name: "index_authentications_on_user_id"
 
   create_table "care_circles", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "caregivers", force: true do |t|
+    t.string   "email"
+    t.string   "name"
+    t.integer  "gender"
+    t.string   "language"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.text     "description"
+    t.integer  "age"
+    t.integer  "years_of_experience"
+    t.string   "occupation"
+    t.boolean  "insured"
+    t.boolean  "bonded"
+    t.boolean  "reviewed"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -61,13 +80,7 @@ ActiveRecord::Schema.define(version: 20130822031731) do
 
   create_table "medication_reminders", force: true do |t|
     t.integer  "medication_id"
-    t.boolean  "monday"
-    t.boolean  "tuesday"
-    t.boolean  "wednesday"
-    t.boolean  "thursday"
-    t.boolean  "friday"
-    t.boolean  "saturday"
-    t.boolean  "sunday"
+    t.string   "days"
     t.datetime "time"
     t.datetime "created_at"
     t.datetime "updated_at"

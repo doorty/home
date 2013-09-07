@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  email: MyString
+  name: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  description: MyText
+  age: 1
+  years_of_experience: 1
+  occupation: MyString
+  insured: false
+  bonded: false
+  reviewed: false
+
+two:
+  email: MyString
+  name: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  description: MyText
+  age: 1
+  years_of_experience: 1
+  occupation: MyString
+  insured: false
+  bonded: false
+  reviewed: false

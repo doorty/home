@@ -1,7 +1,7 @@
 <h1>Dashboard</h1>
 
 <div class="clearfix">
-	<%= link_to "Find Caregiver", new_care_circle_appointment_path(@care_circle), id: "new-caregiver-link", :class => "btn pull-left"  %>
+	<%= link_to "Find Caregiver", caregivers_path, id: "new-caregiver-link", :class => "btn pull-left"  %>
 
 	<%= link_to "New Appointment", new_care_circle_appointment_path(@care_circle), id: "new-appointment-link", :class => "btn pull-right"  %>
 	<%= link_to "Status Update", new_care_circle_status_path(@care_circle), id: "new-status-link", :class => "btn pull-right", :style => "margin-right:10px;" %>
@@ -11,15 +11,40 @@
 
 <ul id="activities-list" class="media-list">
 	<% @activities.each do |activity| %>
-		<li><%= activity.title %> - <%= activity.date.strftime("%B #{activity.date.day.ordinalize} at %l:%M%p") %></li>
+		<% case %>
+			<% when (activity.type == :medication) %>
+				<li class="media">
+					<label class="checkbox">
+			      <input type="checkbox"> <%= activity.date.strftime("%B #{activity.date.day.ordinalize} at %l:%M%p") %> <%= activity.title %> - <%= activity.text %>
+			    </label>
+				</li>
+			<% when (activity.type == :status) %>
+				<li class="media">
+					<div class="media-body">
+			      <h5 class="media-heading"><%= activity.title %></h5>
+			      <p><%= activity.text %></p>
+					</div>
+				</li>
+			<% when (activity.type == :appointment) %>
+				<li class="media">
+					<div class="media-body">
+			      <h5 class="media-heading"><%= activity.title %> - <%= activity.date.strftime("%B #{activity.date.day.ordinalize} at %l:%M%p") %></h5>
+			      <p><%= activity.text %></p>
+					</div>
+				</li>
+			<% when (activity.type == :note) %>
+				<li class="media">
+					<div class="media-body">
+			      <h5 class="media-heading"><%= activity.title %> - <%= activity.date.strftime("%B #{activity.date.day.ordinalize} at %l:%M%p") %></h5>
+			      <p><%= activity.text %></p>
+				</div>
+				</li>
+		<% end %>
 	<% end %>
 	<li class="media">
-    <a class="pull-left" href="#">
-      <img class="media-object" src="http://placehold.it/64x64" data-src="http://placehold.it/64x64">
-    </a>
     <div class="media-body">
       <h4 class="media-heading">6:00pm Medication Reminder</h4>
-      <p>It's time to take 9mg of "drug name".</p>
+      <p>It's time to take 9mg of Asprin.</p>
     </div>
   </li>
 	<li class="media">
@@ -27,7 +52,7 @@
       <img class="media-object" src="http://placehold.it/64x64" data-src="http://placehold.it/64x64">
     </a>
     <div class="media-body">
-      <h4 class="media-heading">Samantha Withers</h4>
+      <h5 class="media-heading">Samantha Withers</h5>
       <p>Hi honey, I need the gutters cleaned for winter, some boxes moved from the basement and some light bulbs changed.</p>
  
       <!-- Nested media object -->
@@ -36,9 +61,9 @@
 		      <img class="media-object" src="http://placehold.it/64x64" data-src="http://placehold.it/64x64">
 		    </a>
 		    <div class="media-body">
-		      <h4 class="media-heading">James Withers</h4>
+		      <h5 class="media-heading">James Withers</h5>
 		      <p>I'll have someone come over this week. </p>
-     </div>
+				</div>
     </div>
   </li>
 </ul>

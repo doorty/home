@@ -17,13 +17,14 @@
 	<%= f.label :doctor_id do %>Doctor (<%= link_to "add a doctor", new_care_circle_doctor_path(@care_circle) %>)<% end %>
 	<%= f.input_field :doctor_id, collection: @care_circle.doctors   %>
   
+  <h4>Medication Times</h4>
   <div class="new-reminder">
-  	<%= f.fields_for :medication_reminders do |builder| %>
+  	<%= f.fields_for(:medication_reminders) do |builder| %>
 			<%= render "medication_reminder_fields", :f => builder %>
   	<% end %>
   </div>
   
-  <%= link_to_add_fields "Add Medication Time", f, :medication_reminders %>
+  <%= link_to_add_fields(content_tag(:i, '', :class => 'icon-plus') + ' Add Medication Time',f, :medication_reminders) %>
   
   <div class="form-actions">
     <%= f.button :submit, { :class => "btn" } %>
