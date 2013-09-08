@@ -17,7 +17,7 @@ end
 
 Caregiver.create(:id => 1, :email => 'caregiver1@email1.com', :name => 'Kali Burns', 
 	:gender => 1, :language => '', :city => 'Des Moines', :state => 'IA', :zip => '50982',
-	:description => 'Hello,\rMy name is Kaili and I am a very friendly and easygoing person. I love to stay busy and have fun. I am full time student at Des Moines University.',
+	:description => 'Hello,<br><br>My name is Kaili and I am a very friendly and easygoing person. I love to stay busy and have fun. I am full time student at Des Moines University.',
 	:age => 30, :years_of_experience => 1, :occupation => 'Student', :insured => true, :bonded => true, :reviewed => true)
 	
 Caregiver.create(:id => 2, :email => 'caregiver2@email2.com', :name => 'Portery McFadden', 

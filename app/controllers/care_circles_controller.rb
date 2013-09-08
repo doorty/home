@@ -138,7 +138,7 @@ class CareCirclesController < ApplicationController
 			end
 			
 			activities += care_circle.medications.all(:order => 'created_at DESC', :limit => limit).map do |medication|
-			  Activity.new(:medication, medication.name, nil, medication.created_at)
+			  Activity.new(:medication, medication.name, "Take #{medication.dosage} at #{medication.strength}", medication.medication_reminders.first.try(:time))
 			end
 			
 			# activities += Message.all(:conditions => ['receiver_id = ?', current_user.id], :order => 'created_at DESC', :limit => limit).map do |message|

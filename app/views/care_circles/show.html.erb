@@ -15,7 +15,7 @@
 			<% when (activity.type == :medication) %>
 				<li class="media">
 					<label class="checkbox">
-			      <input type="checkbox"> <%= activity.date.strftime("%B #{activity.date.day.ordinalize} at %l:%M%p") %> <%= activity.title %> - <%= activity.text %>
+			      <input type="checkbox"> <h4>Take <%= activity.title %>: <%= activity.text %> (<%= activity.date.strftime("%I:%M %p") %>)</h4>
 			    </label>
 				</li>
 			<% when (activity.type == :status) %>
@@ -42,11 +42,10 @@
 		<% end %>
 	<% end %>
 	<li class="media">
-    <div class="media-body">
-      <h4 class="media-heading">6:00pm Medication Reminder</h4>
-      <p>It's time to take 9mg of Asprin.</p>
-    </div>
-  </li>
+		<label class="checkbox">
+      <input type="checkbox"> <h4>Take Asprin: Take 10mg at maximum strength (05:38 PM)</h4>
+    </label>
+	</li>
 	<li class="media">
     <a class="pull-left" href="#">
       <img class="media-object" src="http://placehold.it/64x64" data-src="http://placehold.it/64x64">

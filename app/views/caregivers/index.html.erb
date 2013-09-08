@@ -58,7 +58,7 @@
 		<div class="span6">
 			<h4><%= caregiver.name %></h4>
 			<p><%= caregiver.city %>, <%= caregiver.state %> (<%= caregiver.zip %>)</p>
-			<p><%= caregiver.description %>...</p>
+			<p><%=raw caregiver.description %>...</p>
 			<p><%= link_to 'Read More', '#' %>
 			<p><button class="btn btn-large btn-block btn-info" type="button">Learn more about <%= caregiver.name %></button></p>
 		</div>
