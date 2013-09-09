@@ -29,7 +29,8 @@ class NotesController < ApplicationController
 
     respond_to do |format|
       if @note.save
-        format.html { redirect_to [@care_circle, @note], notice: 'Note was successfully created.' }
+        #format.html { redirect_to [@care_circle, @note], notice: 'Note was successfully created.' }
+        format.html { redirect_to care_circle_notes_url, notice: 'Note was successfully created.' }
         format.json { render action: 'show', status: :created, location: @note }
       else
         format.html { render action: 'new' }
@@ -43,7 +44,8 @@ class NotesController < ApplicationController
   def update
     respond_to do |format|
       if @note.update(note_params)
-        format.html { redirect_to [@care_circle, @note], notice: 'Note was successfully updated.' }
+        #format.html { redirect_to [@care_circle, @note], notice: 'Note was successfully updated.' }
+        format.html { redirect_to care_circle_notes_url, notice: 'Note was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

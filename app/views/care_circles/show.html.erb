@@ -13,27 +13,27 @@
 	<% @activities.each do |activity| %>
 		<% case %>
 			<% when (activity.type == :medication) %>
-				<li class="media">
+				<li class="media medication">
 					<label class="checkbox">
 			      <input type="checkbox"> <h4>Take <%= activity.title %>: <%= activity.text %> (<%= activity.date.strftime("%I:%M %p") %>)</h4>
 			    </label>
 				</li>
 			<% when (activity.type == :status) %>
-				<li class="media">
+				<li class="media status">
 					<div class="media-body">
 			      <h5 class="media-heading"><%= activity.title %></h5>
 			      <p><%= activity.text %></p>
 					</div>
 				</li>
 			<% when (activity.type == :appointment) %>
-				<li class="media">
+				<li class="media appointment">
 					<div class="media-body">
 			      <h5 class="media-heading"><%= activity.title %> - <%= activity.date.strftime("%B #{activity.date.day.ordinalize} at %l:%M%p") %></h5>
 			      <p><%= activity.text %></p>
 					</div>
 				</li>
 			<% when (activity.type == :note) %>
-				<li class="media">
+				<li class="media note">
 					<div class="media-body">
 			      <h5 class="media-heading"><%= activity.title %> - <%= activity.date.strftime("%B #{activity.date.day.ordinalize} at %l:%M%p") %></h5>
 			      <p><%= activity.text %></p>

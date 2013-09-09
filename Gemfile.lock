@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/scambra/devise_invitable.git
-  revision: 40000beee05f23635a5e46c18e1eea22b764bb07
+  revision: 651e1adbf1fde2a10833a8f62c18ef140726ca19
   specs:
     devise_invitable (1.2.1)
       actionmailer (>= 3.2.6, < 5)
@@ -79,7 +79,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.25)
     minitest (4.7.5)
-    multi_json (1.7.9)
+    multi_json (1.8.0)
     multipart-post (1.2.0)
     oauth2 (0.8.1)
       faraday (~> 0.8)

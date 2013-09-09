@@ -1,14 +1,37 @@
-<p id="notice"><%= notice %></p>
+<h1><%= @medication.name %></h1>
 
 <p>
-  <strong>Care circle:</strong>
-  <%= @medication.care_circle %>
+  <strong>Strength:</strong>
+  <%= @medication.strength %>
 </p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @medication.name %>
+  <strong>Dosage:</strong>
+  <%= @medication.dosage %>
+</p>
+
+<p>
+  <strong>Doctor</strong>
+  <%= link_to(Doctor.find(@medication.doctor_id).try(:name), [@care_circle, Doctor.find(@medication.doctor_id)]) if @medication.doctor_id %>
+</p>
+
+<p>
+  <strong>Times:</strong>
+  <table>
+    <tbody>
+      <% @medication.medication_reminders.each do |reminder| %>
+      <tr>
+        <td>
+          <%= reminder.days.join(", ") %>
+        </td>
+        <td>
+          <%= reminder.time.strftime('%l:%M %p') if reminder.time %>
+        </td>
+      </tr>
+     <% end %> 
+    </tbody>
+  </table>
 </p>
 
 <%= link_to 'Edit', edit_care_circle_medication_path(@care_circle,@medication) %> |
-<%= link_to 'Back', care_circle_medications_path(@care_circle) %>
+<%= link_to 'Medications', care_circle_medications_path(@care_circle) %>

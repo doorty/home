@@ -1,7 +1,4 @@
-<p>
-  <strong>Name:</strong>
-  <%= @doctor.name %>
-</p>
+<h1><%= @doctor.name %></h1>
 
 <p>
   <strong>Phone:</strong>
@@ -24,4 +21,4 @@
 </p>
 
 <%= link_to 'Edit', edit_care_circle_doctor_path(@care_circle,@doctor) %> |
-<%= link_to 'Back', care_circle_doctors_path %>
+<%= link_to 'Doctors', care_circle_doctors_path %>
