@@ -1,0 +1,2 @@
+module CareFinderHelper
+end
