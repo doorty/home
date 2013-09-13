@@ -3,21 +3,29 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #activities-list {
-	
-	.medication {
+
+  .media {
+    //padding: 5px 10px;
+        
+    &.medication {
+      padding: 5px 10px;
+  	  background:#ffd8d8;
+  	}
   	
-	}
-	
-	.status {
+  	&.status {
+  	  .media-body {
+  	    padding:5px 10px;
+    	  background:#cce0ff;
+      }
+  	}
   	
-	}
-	
-	.appointment {
+  	&.appointment {
+    	
+  	}
   	
-	}
-	
-	.note {
-  	
-	}
+  	&.note {
+    	
+  	} 
+  }
 	
 }

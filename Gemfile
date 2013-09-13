@@ -45,6 +45,9 @@ gem 'devise'
 #gem 'devise_invitable'
 gem 'devise_invitable', :github => 'scambra/devise_invitable'
 
+# Consume third-party APIs
+gem 'httparty'
+
 gem 'omniauth-facebook'
 gem 'koala'
 

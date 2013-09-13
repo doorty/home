@@ -1,5 +1,13 @@
 Src::Application.routes.draw do
 
+  # CareFinder api_method
+  get 'care_finder/doctors', :to => 'care_finder#doctors'
+  get 'care_finder/doctors_count', :to => 'care_finder#doctors_count'
+  get 'care_finder/doctor_details', :to => 'care_finder#doctor_details'
+  get 'care_finder/doctor_reviews', :to => 'care_finder#doctor_reviews'
+  get 'care_finder/doctor_reviews_count', :to => 'care_finder#doctor_reviews_count'
+  get 'care_finder/doctor_similar_names', :to => 'care_finder#doctor_similar_names'
+  
   resources :caregivers
 
   # You can have the root of your site routed with "root"
@@ -10,8 +18,8 @@ Src::Application.routes.draw do
   get "contact", :to => "welcome#contact"
 	
 	# support for facebook
-	get "auth/:provider/callback", to: "sessions#create"
-  get "auth/failure", to: redirect("/")
+	get "auth/:provider/callback", :to => "sessions#create"
+  get "auth/failure", :to => redirect("/")
   #get "signout", to: "sessions#destory", as: "signout"
     
   #devise_for :users

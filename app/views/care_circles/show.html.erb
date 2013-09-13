@@ -13,14 +13,17 @@
 	<% @activities.each do |activity| %>
 		<% case %>
 			<% when (activity.type == :medication) %>
-				<li class="media medication">
+				<li class="media medication thumbnail">
 					<label class="checkbox">
 			      <input type="checkbox"> <h4>Take <%= activity.title %>: <%= activity.text %> (<%= activity.date.strftime("%I:%M %p") %>)</h4>
 			    </label>
 				</li>
 			<% when (activity.type == :status) %>
 				<li class="media status">
-					<div class="media-body">
+				  <a class="pull-left" href="#">
+  		      <img class="media-object" src="http://placehold.it/64x64" data-src="http://placehold.it/64x64">
+  		    </a>
+					<div class="media-body thumbnail">
 			      <h5 class="media-heading"><%= activity.title %></h5>
 			      <p><%= activity.text %></p>
 					</div>
@@ -41,12 +44,12 @@
 				</li>
 		<% end %>
 	<% end %>
-	<li class="media">
+	<li class="media medication">
 		<label class="checkbox">
       <input type="checkbox"> <h4>Take Asprin: Take 10mg at maximum strength (05:38 PM)</h4>
     </label>
 	</li>
-	<li class="media">
+	<li class="media status">
     <a class="pull-left" href="#">
       <img class="media-object" src="http://placehold.it/64x64" data-src="http://placehold.it/64x64">
     </a>
@@ -55,7 +58,7 @@
       <p>Hi honey, I need the gutters cleaned for winter, some boxes moved from the basement and some light bulbs changed.</p>
  
       <!-- Nested media object -->
-      <div class="media">
+      <div class="media status">
         <a class="pull-left" href="#">
 		      <img class="media-object" src="http://placehold.it/64x64" data-src="http://placehold.it/64x64">
 		    </a>

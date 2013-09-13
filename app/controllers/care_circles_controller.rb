@@ -126,7 +126,7 @@ class CareCirclesController < ApplicationController
 			limit = 10
 			activities = []
 			activities += care_circle.statuses.all(:order => 'created_at DESC', :limit => limit).map do |status|
-			  Activity.new(:status, status.message, nil, status.created_at)
+			  Activity.new(:status, "John Doe", status.message, status.created_at)
 			end
 			
 			activities += care_circle.appointments.all(:order => 'date DESC', :limit => limit).map do |appointment|
