@@ -16,6 +16,13 @@ body.welcome {
     margin: 30px 0;
   }
   
+  #wellmark-logo {
+    a:hover {
+      color:#08c;
+      text-decoration: none;
+    }
+  }
+  
   /* Main marketing message and sign up button */
   .jumbotron {
     margin: 60px 0;

@@ -20,8 +20,8 @@
 				</li>
 			<% when (activity.type == :status) %>
 				<li class="media status">
-				  <a class="pull-left" href="#">
-  		      <img class="media-object" src="http://placehold.it/64x64" data-src="http://placehold.it/64x64">
+				  <a class="pull-left thumbnail" href="#">
+  		      <%= image_tag("/images/demo/evin-square-1.jpg", :class => "media-object", :width => "64", :height => "64") %>
   		    </a>
 					<div class="media-body thumbnail">
 			      <h5 class="media-heading"><%= activity.title %></h5>
@@ -44,25 +44,26 @@
 				</li>
 		<% end %>
 	<% end %>
-	<li class="media medication">
+	<li class="media medication thumbnail">
 		<label class="checkbox">
       <input type="checkbox"> <h4>Take Asprin: Take 10mg at maximum strength (05:38 PM)</h4>
     </label>
 	</li>
 	<li class="media status">
-    <a class="pull-left" href="#">
-      <img class="media-object" src="http://placehold.it/64x64" data-src="http://placehold.it/64x64">
+    <a class="pull-left thumbnail" href="#">
+      <%= image_tag("/images/demo/mom-square-1.jpg", :class => "media-object", :width => "64", :height => "64") %>
     </a>
-    <div class="media-body">
+    <div class="media-body thumbnail">
       <h5 class="media-heading">Samantha Withers</h5>
       <p>Hi honey, I need the gutters cleaned for winter, some boxes moved from the basement and some light bulbs changed.</p>
  
       <!-- Nested media object -->
+      <hr>
       <div class="media status">
-        <a class="pull-left" href="#">
-		      <img class="media-object" src="http://placehold.it/64x64" data-src="http://placehold.it/64x64">
+        <a class="pull-left thumbnail" href="#" style=" background-color: #fff; ">
+		      <%= image_tag("/images/demo/guy-square-1.jpg", :class => "media-object", :width => "64", :height => "64") %>
 		    </a>
-		    <div class="media-body">
+		    <div class="media-body thumbnail">
 		      <h5 class="media-heading">James Withers</h5>
 		      <p>I'll have someone come over this week. </p>
 				</div>
