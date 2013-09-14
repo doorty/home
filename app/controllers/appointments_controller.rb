@@ -29,7 +29,8 @@ class AppointmentsController < ApplicationController
 		
     respond_to do |format|
       if @appointment.save
-        format.html { redirect_to [@care_circle, @appointment], notice: 'Appointment was successfully created.' }
+        format.html { redirect_to @care_circle, notice: 'Appointment was successfully created.' }
+        #format.html { redirect_to [@care_circle, @appointment], notice: 'Appointment was successfully created.' }
         format.json { render action: 'show', status: :created, location: @appointment }
         format.js
       else

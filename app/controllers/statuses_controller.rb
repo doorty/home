@@ -29,7 +29,8 @@ class StatusesController < ApplicationController
 
     respond_to do |format|
       if @status.save
-        format.html { redirect_to [@care_circle, @status], notice: 'Status was successfully created.' }
+        format.html { redirect_to @care_circle, notice: 'Status was successfully created.' }
+        #format.html { redirect_to [@care_circle, @status], notice: 'Status was successfully created.' }
         format.json { render action: 'show', status: :created, location: @status }
         format.js
       else

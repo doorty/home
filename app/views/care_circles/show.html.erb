@@ -29,10 +29,10 @@
 					</div>
 				</li>
 			<% when (activity.type == :appointment) %>
-				<li class="media appointment">
+				<li class="media appointment thumbnail">
 					<div class="media-body">
-			      <h5 class="media-heading"><%= activity.title %> - <%= activity.date.strftime("%B #{activity.date.day.ordinalize} at %l:%M%p") %></h5>
-			      <p><%= activity.text %></p>
+			      <h5 class="media-heading"><%= activity.title %></h5>
+			      <p>Appointment at <b><%= activity.date.strftime("%B #{activity.date.day.ordinalize} at %l:%M%p") %></b></p>
 					</div>
 				</li>
 			<% when (activity.type == :note) %>
