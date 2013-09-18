@@ -6,7 +6,7 @@ Src::Application.configure do
   
   
   # Devise needs this.. TODO: change url for production
-  config.action_mailer.default_url_options = { :host => 'senior-serve.com' }
+  config.action_mailer.default_url_options = { :host => 'www.wellmarkhome.com' }
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both thread web servers
