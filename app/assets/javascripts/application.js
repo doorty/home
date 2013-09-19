@@ -49,7 +49,9 @@ $(document).on('ready page:change', function() {
     pickDate: false,
   });
   
+  /*
   $('#call-case-manager-desktop').on('click', function() {
     $(this).toggleClass('number');
   });
+  */
 });

@@ -18,7 +18,7 @@
   <div class="container">
 	
 	  <div class="masthead">
-	    <h3 class="main-logo"><%= link_to( care_circles_path, { :class => "muted" } ) do %>Wellmark <i class="icon-home"></i> HOME<% end %></h3>
+	    <h3 class="main-logo"><%= link_to( care_circles_path, { :class => "" } ) do %>Wellmark <i class="icon-home"></i> HOME<% end %></h3>
       <div class="navbar main">
         <div class="navbar-inner">
           <div class="container">
@@ -36,12 +36,21 @@
                 <li class="<%= 'active' if is_my_account? %>"><%= link_to edit_user_registration_path do %><i class="icon-user icon-large"></i> My Account<% end %></li>
                 <li class="<%= 'active' if is_emergency? %>"><%= link_to care_circle_emergency_path(current_care_circle), 'data-no-turbolink' => true  do %><i class="icon-ambulance icon-large"></i> Emergency<% end %></li>
                 <li class=""><a href="http://www.wellmark.com/HealthAndWellness/" class="" target="_blank"><i class="icon-stethoscope icon-large"></i> Wellness Portal</a></li>
+                <li class="dropdown hidden-phone">
+                  <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">My Case Manager <b class="caret"></b></a>
+                  <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class="icon-phone icon-large"></i>&nbsp; Call: 1-800-555-2345</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#invite"><i class="icon-user-md icon-large"></i>&nbsp; Invite Case Manager</a></li>
+                  </ul>
+                </li>
+              <!--
                 <li class="hidden-phone">
                   <a id="call-case-manager-desktop" href="javascript:void(0);">
                     <span class="call"><i class="icon-phone icon-large"></i> Call Case Manager</span>
                     <span class="number "><i class="icon-phone icon-large"></i> 1-800-867-5309&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                   </a>
                 </li>
+              -->
                 <li class="visible-phone">
                   <a id="call-case-manager-mobile" href="tel:1-800-867-5309">
                     <span class="call"><i class="icon-phone icon-large"></i> Case Manager: 1-800-867-5309</span>

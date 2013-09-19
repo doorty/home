@@ -1,15 +1,31 @@
-<h1>Dashboard</h1>
-
 <div class="clearfix">
-	<%= link_to "Find Caregiver", caregivers_path, id: "new-caregiver-link", :class => "btn pull-left"  %>
 
-	<%= link_to "New Appointment", new_care_circle_appointment_path(@care_circle), id: "new-appointment-link", :class => "btn pull-right"  %>
-	<%= link_to "Status Update", new_care_circle_status_path(@care_circle), id: "new-status-link", :class => "btn pull-right", :style => "margin-right:10px;" %>
+  <h1 class="pull-left" style="display:inline-block; margin-bottom:0;">Care for Mom</h1>
+  
+  <div class="pull-right" style="display:inline-block">
+  	<%= link_to(new_care_circle_appointment_path(@care_circle), id: "new-appointment-link", :class => "btn btn-small pull-left", :style => "margin-right:10px;") do %>
+  	  <i class="icon-time"></i> New Appointment
+  	<% end %>
+  	<%= link_to(caregivers_path, id: "new-caregiver-link", :class => "btn btn-small pull-left") do  %>
+  	  <i class="icon-search"></i> Find Caregiver
+  	<% end %>
+  </div>
+  
 </div>
 
-<hr/>
+<hr />
 
 <ul id="activities-list" class="media-list">
+  <li class="media status-new">
+	  <a class="pull-left thumbnail" href="#">
+      <%= image_tag("/images/demo/evin-square-1.jpg", :class => "media-object", :width => "64", :height => "64") %>
+    </a>
+		<div class="media-body">
+      <form class="form-horizontal">
+        <textarea rows="3" class="border-box" placeholder="What's on your mind?"></textarea>
+      </form>
+		</div>
+	</li>
 	<% @activities.each do |activity| %>
 		<% case %>
 			<% when (activity.type == :medication) %>

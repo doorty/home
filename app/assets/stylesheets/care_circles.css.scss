@@ -12,6 +12,15 @@
   	  background:#ffd8d8;
   	}
   	
+  	&.status-new {
+  	  form {
+    	  margin-bottom: 0;
+  	  }
+  	  textarea {
+    	  width:100%;
+      }
+  	}
+  	
   	&.status {
   	  .media-body {
   	    padding:5px 10px;
