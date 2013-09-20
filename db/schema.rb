@@ -94,6 +94,7 @@ ActiveRecord::Schema.define(version: 20130906201749) do
     t.string   "strength"
     t.string   "dosage"
     t.integer  "doctor_id"
+    t.decimal  "savings",        precision: 8, scale: 2
     t.datetime "created_at"
     t.datetime "updated_at"
   end

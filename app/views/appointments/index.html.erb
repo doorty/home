@@ -18,7 +18,7 @@
         <td><%= appointment.date %></td>
         <td><%= link_to 'Show', [@care_circle,appointment] %></td>
         <td><%= link_to 'Edit', edit_care_circle_appointment_path(@care_circle, appointment) %></td>
-        <td><%= link_to 'Destroy', [@care_circle, appointment], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Remove', [@care_circle, appointment], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

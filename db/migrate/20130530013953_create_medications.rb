@@ -6,6 +6,7 @@ class CreateMedications < ActiveRecord::Migration
       t.string :strength
       t.string :dosage
       t.references :doctor
+      t.decimal :savings, :precision => 8, :scale => 2
 
       t.timestamps
     end

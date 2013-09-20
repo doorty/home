@@ -27,7 +27,8 @@
             </thead>
           </table>
         </th>
-        <th></th>
+        <th>Savings</th>
+        <!-- <th></th> -->
         <th></th>
         <th></th>
       </tr>
@@ -36,7 +37,7 @@
     <tbody>
       <% @medications.each do |medication| %>
         <tr>
-          <td><%= medication.name %></td>
+          <td><a href="#medModal" data-toggle="modal"><%= medication.name %></a></td>
           <td><%= medication.strength %></td>
           <td><%= medication.dosage %></td>
           <td>
@@ -58,9 +59,10 @@
               </tbody>
             </table>
           </td>
-          <td><%= link_to 'Show', [@care_circle, medication] %></td>
+          <td><%= medication.savings %>%</td>
+          <!--<td><%= link_to 'Show', [@care_circle, medication] %></td>-->
           <td><%= link_to 'Edit', edit_care_circle_medication_path(@care_circle, medication) %></td>
-          <td><%= link_to 'Destroy', care_circle_medication_path(@care_circle, medication), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Remove', care_circle_medication_path(@care_circle, medication), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>
@@ -73,3 +75,62 @@
 <%= link_to( new_care_circle_medication_path(@care_circle), { :class=> "btn" } ) do %>
   <i class="icon-plus"></i> New Medication
 <% end %>
+
+<br><br><br><br>
+
+<h2>Pharmacies</h2>
+
+<table class="table table-hover medication-table-list">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>State</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td>Walgreens Pharmacies</td>
+        <td>(515) 283-2591</td>
+        <td>606 Walnut St</td>
+        <td>Des Moines</td>
+        <td>IA</td>
+        <td><%= link_to 'Edit', '#' %></td>
+        <td><%= link_to 'Remove', '#', data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to( new_care_circle_medication_path(@care_circle), { :class=> "btn" } ) do %>
+  <i class="icon-plus"></i> New Pharmacy
+<% end %>
+
+ 
+<!-- Modal -->
+<div id="medModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+    <h3 id="myModalLabel">Drug Info from MedlinePlus</h3>
+  </div>
+  <div class="modal-body">
+    <h4>Why is this medication prescribed?</h4>
+    <p>Gabapentin capsules, tablets, and oral solution are used to help control certain types of seizures in people who have epilepsy. Gabapentin capsules, tablets, and oral solution are also used to relieve the pain of postherpetic neuralgia (PHN; the burning, stabbing pain or aches that may last for months or years after an attack of shingles).</p>
+    <h4>How should this medicine be used?</h4>
+    <p>Gabapentin comes as a capsule, a tablet, an extended-release (long-acting) tablet, and an oral solution (liquid) to take by mouth. Gabapentin capsules, tablets, and oral solution are usually taken with a full glass of water (8 ounces [240 milliliters]), with or without food, three times a day.</p>
+    <p>These medications should be taken at evenly spaced times throughout the day and night; no more than 12 hours should pass between doses. The extended-release tablet (Horizant) is taken with food once daily at about 5 PM. Follow the directions on your prescription label carefully, and ask your doctor or pharmacist to explain any part you do not understand. Take gabapentin exactly as directed. Do not take more or less of it or take it more often than prescribed by your doctor.</p>
+    <p>Gabapentin extended-release tablets cannot be substituted for another type of gabapentin product. Be sure that you receive only the type of gabapentin that was prescribed by your doctor. Ask your pharmacist if you have any questions about the type of gabapentin you were given.</p>
+    <h4>Other uses for this medicine</h4>
+    <p>Gabapentin is also sometimes used to relieve the pain of diabetic neuropathy (numbness or tingling due to nerve damage in people who have diabetes), and to treat and prevent hot flashes (sudden strong feelings of heat and sweating) in women who are being treated for breast cancer or who have experienced menopause (''change of life'', the end of monthly menstrual periods). Talk to your doctor about the risks of using this medication for your condition.</p>
+  </div>
+  <div class="modal-footer">
+    <a href="http://www.nlm.nih.gov/medlineplus/druginfo/meds/a694007.html" target="_blank" class="btn">Read More</a>
+    <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</button>
+  </div>
+</div>

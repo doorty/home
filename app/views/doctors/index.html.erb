@@ -14,7 +14,7 @@
         <th>Address</th>
         <th>City</th>
         <th>State</th>
-        <th></th>
+        <!--<th></th>-->
         <th></th>
         <th></th>
       </tr>
@@ -28,9 +28,9 @@
           <td><%= doctor.address %></td>
           <td><%= doctor.city %></td>
           <td><%= doctor.state %></td>
-          <td><%= link_to 'Show', [@care_circle, doctor] %></td>
+          <!--<td><%= link_to 'Show', [@care_circle, doctor] %></td>-->
           <td><%= link_to 'Edit', edit_care_circle_doctor_path(@care_circle, doctor) %></td>
-          <td><%= link_to 'Destroy', care_circle_doctor_path(@care_circle, doctor), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Remove', care_circle_doctor_path(@care_circle, doctor), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>

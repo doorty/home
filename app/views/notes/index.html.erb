@@ -9,7 +9,7 @@
     <thead>
       <tr>
         <th>Content</th>
-        <th></th>
+        <!-- <th></th> -->
         <th></th>
         <th></th>
       </tr>
@@ -19,9 +19,9 @@
       <% @notes.each do |note| %>
         <tr>
           <td><%= note.content %></td>
-          <td><%= link_to 'Show', [@care_circle, note] %></td>
+          <!-- <td><%= link_to 'Show', [@care_circle, note] %></td> -->
           <td><%= link_to 'Edit', edit_care_circle_note_path(@care_circle,note) %></td>
-          <td><%= link_to 'Destroy', [@care_circle, note], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Remove', [@care_circle, note], method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>

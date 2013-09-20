@@ -22,7 +22,7 @@
 	        <td><%= chart.care_circle %></td>
 	        <td><%= link_to 'Show', [@care_circle, chart] %></td>
 	        <td><%= link_to 'Edit', edit_care_circle_chart_path(chart) %></td>
-	        <td><%= link_to 'Destroy', care_circle_chart_path(@care_circle, chart), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	        <td><%= link_to 'Remove', care_circle_chart_path(@care_circle, chart), method: :delete, data: { confirm: 'Are you sure?' } %></td>
 	      </tr>
 	    <% end %>
 	  </tbody>

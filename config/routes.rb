@@ -1,5 +1,8 @@
 Src::Application.routes.draw do
 
+  get "users/index"
+  get "users/show"
+  get "my_wellmark/index"
   # CareFinder api_method
   get 'care_finder/doctors', :to => 'care_finder#doctors'
   get 'care_finder/doctors_count', :to => 'care_finder#doctors_count'
@@ -42,6 +45,7 @@ Src::Application.routes.draw do
 		resources :notes
 		resources :doctors
 		resources :charts
+		resources :users
 		get "emergency" => "emergency#index"
 		#get 'foo' => 'controller#index' # maps to /care_circles/foo
 	end

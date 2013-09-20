@@ -28,6 +28,7 @@ class MedicationsController < ApplicationController
   # POST /medications.json
   def create
     @medication = @care_circle.medications.new(medication_params)
+    @medication.savings = 20 + rand(80)
 
     respond_to do |format|
       if @medication.save

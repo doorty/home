@@ -37,7 +37,7 @@
                 <li class="<%= 'active' if is_emergency? %>"><%= link_to care_circle_emergency_path(current_care_circle), 'data-no-turbolink' => true  do %><i class="icon-ambulance icon-large"></i> Emergency<% end %></li>
                 <li class=""><a href="http://www.wellmark.com/HealthAndWellness/" class="" target="_blank"><i class="icon-stethoscope icon-large"></i> Wellness Portal</a></li>
                 <li class="dropdown hidden-phone">
-                  <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">My Case Manager <b class="caret"></b></a>
+                  <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user-md icon-large"></i> Case Manager <b class="caret"></b></a>
                   <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
                     <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class="icon-phone icon-large"></i>&nbsp; Call: 1-800-555-2345</a></li>
                     <li role="presentation"><a role="menuitem" tabindex="-1" href="#invite"><i class="icon-user-md icon-large"></i>&nbsp; Invite Case Manager</a></li>
@@ -83,26 +83,42 @@
 		
 		  <div class="row-fluid">
 		  
-		    <div class="span2">
+		    <div class="span2 left-nav">
 		      <!--Sidebar content-->
 		      <div class="thumbnail hidden-phone">
 		        <%= image_tag("/images/demo/mom-rect-1.jpg", :width => "175", :height => "200") %>
 			    </div>
+			    
+			    <ul class="nav nav-list">
+            <li class="nav-header">Mom's CarePlan</li>
+            <li class="<%= 'active' if is_doctor_tab? %>"><%= link_to "Doctors", care_circle_doctors_path(current_care_circle) %></li>
+            <li class="<%= 'active' if is_medications_tab? %>"><%= link_to "Medications", care_circle_medications_path(current_care_circle) %></li>
+            <li class="<%= 'active' if is_notes_tab? %>"><%= link_to "Notes", care_circle_notes_path(current_care_circle) %></li>
+            <li class="<%= 'active' if is_charts_tab? %>"><%= link_to "Charts", care_circle_charts_path(current_care_circle) %></li>
+            <li class="<%= 'active' if is_charts_tab? %>"><%= link_to "myWellmark", my_wellmark_index_path(current_care_circle) %></li>
+            
+            <li class="nav-header">Care Circle</li>
+            <li class="<%= 'active' if is_members_tab? %>"><%= link_to "Members", care_circle_users_path(current_care_circle) %></li>
+            <li class="<%= 'active' if is_new_members_tab? %>"><%= link_to "New Member", new_user_invitation_path %></li>
+          </ul>
 
-		      
-		      <h5>Mom's Care Plan</h5>
+		      <!--
+		      <h5>Mom's CarePlan</h5>
 		      <ul class="nav nav-pills nav-stacked">
             <li class="<%= 'active' if is_doctor_tab? %>"><%= link_to "Doctors", care_circle_doctors_path(current_care_circle) %></li>
             <li class="<%= 'active' if is_medications_tab? %>"><%= link_to "Medications", care_circle_medications_path(current_care_circle) %></li>
             <li class="<%= 'active' if is_notes_tab? %>"><%= link_to "Notes", care_circle_notes_path(current_care_circle) %></li>
             <li class="<%= 'active' if is_charts_tab? %>"><%= link_to "Charts", care_circle_charts_path(current_care_circle) %></li>
+            <li class="<%= 'active' if is_charts_tab? %>"><%= link_to "myWellmark", my_wellmark_index_path(current_care_circle) %></li>
           </ul>
           
           <h5>Care Circle</h5>
 		      <ul class="nav nav-pills nav-stacked">
-            <li class="<%= 'active' if is_members_tab? %>"><a href="#">Members</a></li>
+            <li class="<%= 'active' if is_members_tab? %>"><%= link_to "Members", care_circle_users_path(current_care_circle) %></li>
             <li class="<%= 'active' if is_new_members_tab? %>"><%= link_to "New Member", new_user_invitation_path %></li>
           </ul>
+          -->
+          
 	      </div>
 	      
 		    <div class="span10">

@@ -342,7 +342,14 @@ $fluidGridGutterWidth768:      percentage($gridGutterWidth768/$gridRowWidth768) 
 
 @media (min-width: 980px) {
   body.dashboard {
-    .main {
+  
+     .left-nav {
+       h5 {
+         font-size: 16px;
+       }
+     }
+  
+    .main { 
       &.navbar .navbar-inner {
         padding: 0;
       }
