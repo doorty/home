@@ -54,4 +54,7 @@ $(document).on('ready page:change', function() {
     $(this).toggleClass('number');
   });
   */
+  
+  // init tooltips
+  $(".show-tooltip").tooltip();
 });
