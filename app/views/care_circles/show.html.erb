@@ -1,88 +1,93 @@
-<div class="clearfix">
-
-  <h1 class="pull-left" style="display:inline-block; margin-bottom:0;">Care for Mom</h1>
+<div id="dashboard-home">
   
-  <div class="pull-right" style="display:inline-block">
-  	<%= link_to(new_care_circle_appointment_path(@care_circle), id: "new-appointment-link", :class => "btn btn-small pull-left", :style => "margin-right:10px;") do %>
-  	  <i class="icon-time"></i> New Appointment
-  	<% end %>
-  	<%= link_to(caregivers_path, id: "new-caregiver-link", :class => "btn btn-small pull-left") do  %>
-  	  <i class="icon-search"></i> Find Caregiver
-  	<% end %>
+  <div class="clearfix header">
+  
+    <h1 class="pull-left" style="">Care for Mom</h1>
+    
+    <div class="options pull-right" style="">
+    	<%= link_to(new_care_circle_appointment_path(@care_circle), id: "new-appointment-link", :class => "btn btn-small pull-left", :style => "margin-right:10px;") do %>
+    	  <i class="icon-time"></i> New Appointment
+    	<% end %>
+    	<%= link_to(caregivers_path, id: "new-caregiver-link", :class => "btn btn-small pull-left") do  %>
+    	  <i class="icon-search"></i> Find Caregiver
+    	<% end %>
+    </div>
+    
   </div>
   
-</div>
-
-<hr />
-
-<ul id="activities-list" class="media-list">
-  <li class="media status-new">
-	  <a class="pull-left thumbnail" href="#">
-      <%= image_tag("/images/demo/evin-square-1.jpg", :class => "media-object", :width => "64", :height => "64") %>
-    </a>
-		<div class="media-body">
-      <form class="form-horizontal">
-        <textarea rows="3" class="border-box" placeholder="What's on your mind?"></textarea>
-      </form>
-		</div>
-	</li>
-	<% @activities.each do |activity| %>
-		<% case %>
-			<% when (activity.type == :medication) %>
-				<li class="media medication thumbnail">
-					<label class="checkbox">
-			      <input type="checkbox"> <h4>Take <%= activity.title %>: <%= activity.text %> (<%= activity.date.strftime("%I:%M %p") %>)</h4>
-			    </label>
-				</li>
-			<% when (activity.type == :status) %>
-				<li class="media status">
-				  <a class="pull-left thumbnail" href="#">
-  		      <%= image_tag("/images/demo/evin-square-1.jpg", :class => "media-object", :width => "64", :height => "64") %>
+  <hr class="top" />
+  
+  <ul id="activities-list" class="media-list">
+    <li class="media status-new">
+  	  <a class="pull-left thumbnail" href="#">
+        <%= image_tag("/images/demo/evin-square-1.jpg", :class => "media-object", :width => "64", :height => "64") %>
+      </a>
+  		<div class="media-body">
+        <form class="form-horizontal">
+          <textarea rows="3" class="border-box" placeholder="What's on your mind?"></textarea>
+        </form>
+  		</div>
+  	</li>
+  	<% @activities.each do |activity| %>
+  		<% case %>
+  			<% when (activity.type == :medication) %>
+  				<li class="media medication thumbnail">
+  					<label class="checkbox">
+  			      <input type="checkbox"> <h4>Take <%= activity.title %>: <%= activity.text %> (<%= activity.date.strftime("%I:%M %p") %>)</h4>
+  			    </label>
+  				</li>
+  			<% when (activity.type == :status) %>
+  				<li class="media status">
+  				  <a class="pull-left thumbnail" href="#">
+    		      <%= image_tag("/images/demo/evin-square-1.jpg", :class => "media-object", :width => "64", :height => "64") %>
+    		    </a>
+  					<div class="media-body thumbnail">
+  			      <h5 class="media-heading"><%= activity.title %></h5>
+  			      <p><%= activity.text %></p>
+  					</div>
+  				</li>
+  			<% when (activity.type == :appointment) %>
+  				<li class="media appointment thumbnail">
+  					<div class="media-body">
+  			      <h5 class="media-heading"><%= activity.title %></h5>
+  			      <p>Appointment at <b><%= activity.date.strftime("%B #{activity.date.day.ordinalize} at %l:%M%p") %></b></p>
+  					</div>
+  				</li>
+  			<% when (activity.type == :note) %>
+  				<li class="media note">
+  					<div class="media-body">
+  			      <h5 class="media-heading"><%= activity.title %> - <%= activity.date.strftime("%B #{activity.date.day.ordinalize} at %l:%M%p") %></h5>
+  			      <p><%= activity.text %></p>
+  				</div>
+  				</li>
+  		<% end %>
+  	<% end %>
+  	<li class="media medication thumbnail">
+  		<label class="checkbox">
+        <input type="checkbox"> <h4>Take Asprin: Take 10mg at maximum strength (05:38 PM)</h4>
+      </label>
+  	</li>
+  	<li class="media status">
+      <a class="pull-left thumbnail" href="#">
+        <%= image_tag("/images/demo/mom-square-1.jpg", :class => "media-object", :width => "64", :height => "64") %>
+      </a>
+      <div class="media-body thumbnail">
+        <h5 class="media-heading">Samantha Withers</h5>
+        <p>Hi honey, I need the gutters cleaned for winter, some boxes moved from the basement and some light bulbs changed.</p>
+   
+        <!-- Nested media object -->
+        <hr>
+        <div class="media status">
+          <a class="pull-left thumbnail" href="#" style=" background-color: #fff; ">
+  		      <%= image_tag("/images/demo/guy-square-1.jpg", :class => "media-object", :width => "64", :height => "64") %>
   		    </a>
-					<div class="media-body thumbnail">
-			      <h5 class="media-heading"><%= activity.title %></h5>
-			      <p><%= activity.text %></p>
-					</div>
-				</li>
-			<% when (activity.type == :appointment) %>
-				<li class="media appointment thumbnail">
-					<div class="media-body">
-			      <h5 class="media-heading"><%= activity.title %></h5>
-			      <p>Appointment at <b><%= activity.date.strftime("%B #{activity.date.day.ordinalize} at %l:%M%p") %></b></p>
-					</div>
-				</li>
-			<% when (activity.type == :note) %>
-				<li class="media note">
-					<div class="media-body">
-			      <h5 class="media-heading"><%= activity.title %> - <%= activity.date.strftime("%B #{activity.date.day.ordinalize} at %l:%M%p") %></h5>
-			      <p><%= activity.text %></p>
-				</div>
-				</li>
-		<% end %>
-	<% end %>
-	<li class="media medication thumbnail">
-		<label class="checkbox">
-      <input type="checkbox"> <h4>Take Asprin: Take 10mg at maximum strength (05:38 PM)</h4>
-    </label>
-	</li>
-	<li class="media status">
-    <a class="pull-left thumbnail" href="#">
-      <%= image_tag("/images/demo/mom-square-1.jpg", :class => "media-object", :width => "64", :height => "64") %>
-    </a>
-    <div class="media-body thumbnail">
-      <h5 class="media-heading">Samantha Withers</h5>
-      <p>Hi honey, I need the gutters cleaned for winter, some boxes moved from the basement and some light bulbs changed.</p>
- 
-      <!-- Nested media object -->
-      <hr>
-      <div class="media status">
-        <a class="pull-left thumbnail" href="#" style=" background-color: #fff; ">
-		      <%= image_tag("/images/demo/guy-square-1.jpg", :class => "media-object", :width => "64", :height => "64") %>
-		    </a>
-		    <div class="media-body thumbnail">
-		      <h5 class="media-heading">James Withers</h5>
-		      <p>I'll have someone come over this week. </p>
-				</div>
-    </div>
-  </li>
-</ul>
+  		    <div class="media-body">
+  		      <h5 class="media-heading">James Withers</h5>
+  		      <p>I'll have someone come over this week. </p>
+  				</div>
+      </div>
+    </li>
+  </ul>
+
+
+</div>

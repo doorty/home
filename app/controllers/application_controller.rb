@@ -60,6 +60,11 @@ class ApplicationController < ActionController::Base
     end
     helper_method :is_charts_tab?
     
+    def is_my_wellmark_tab?
+      params[:controller] == "my_wellmark"
+    end
+    helper_method :is_my_wellmark_tab?
+    
     def is_members_tab?
       params[:controller] == "members"
     end

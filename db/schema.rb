@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20130906201749) do
     t.string   "name"
     t.integer  "gender"
     t.string   "language"
+    t.string   "image_url"
     t.string   "city"
     t.string   "state"
     t.string   "zip"

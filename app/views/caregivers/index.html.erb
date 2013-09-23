@@ -29,7 +29,7 @@
 
 		<div class="span3">
 			<div class="thumbnail" style="border:0;">
-	      <img src="http://placehold.it/175x175" alt="">
+	      <img src="<%= caregiver.image_url %>" alt="">
 	      <h5>Insured <span class="pull-right">
 	      	<% if caregiver.insured then %>
 	      		<i class="icon-check icon-large" style="color:green;"></i>
@@ -60,7 +60,7 @@
 			<p><%= caregiver.city %>, <%= caregiver.state %> (<%= caregiver.zip %>)</p>
 			<p><%=raw caregiver.description %>...</p>
 			<p><%= link_to 'Read More', '#' %>
-			<p><button class="btn btn-large btn-block btn-info" type="button">Learn more about <%= caregiver.name %></button></p>
+			<p><button class="btn btn-large btn-block btn-info" type="button">Learn more about <%= caregiver.name.split(' ')[0] %></button></p>
 		</div>
 		
 		<div class="span3">

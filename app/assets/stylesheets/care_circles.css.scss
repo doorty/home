@@ -2,40 +2,60 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#activities-list {
+#dashboard-home {
 
-  .media {
-    //padding: 5px 10px;
-        
-    &.medication {
-      padding: 5px 10px;
-  	  background:#ffd8d8;
-  	}
-  	
-  	&.status-new {
-  	  form {
-    	  margin-bottom: 0;
-  	  }
-  	  textarea {
-    	  width:100%;
-      }
-  	}
-  	
-  	&.status {
-  	  .media-body {
-  	    padding:5px 10px;
-    	  background:#cce0ff;
-      }
-  	}
-  	
-  	&.appointment {
-    	padding: 5px 10px;
-  	  background: #ffd88b;
-  	}
-  	
-  	&.note {
-    	
-  	} 
+  .header {
+
+    h1 {
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+    .options {
+      display: inline-block;
+      margin-top:20px;
+    }
   }
-	
+  
+  hr.top {
+    margin-top:0;
+  }
+  
+  #activities-list {
+  
+    .media {
+      //padding: 5px 10px;
+          
+      &.medication {
+        padding: 5px 10px;
+    	  background:#ffd8d8;
+    	}
+    	
+    	&.status-new {
+    	  form {
+      	  margin-bottom: 0;
+    	  }
+    	  textarea {
+      	  width:100%;
+        }
+    	}
+    	
+    	&.status {
+    	  .media-body {
+    	    padding:5px 10px;
+      	  background:#cce0ff;
+        }
+    	}
+    	
+    	&.appointment {
+      	padding: 5px 10px;
+    	  background: #ffd88b;
+    	}
+    	
+    	&.note {
+      	
+    	} 
+    }
+  	
+  }
+
 }

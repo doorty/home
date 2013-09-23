@@ -5,6 +5,7 @@ class CreateCaregivers < ActiveRecord::Migration
       t.string :name
       t.integer :gender # male = 0, female = 1
       t.string :language
+      t.string :image_url
       t.string :city
       t.string :state
       t.string :zip
