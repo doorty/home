@@ -1,5 +1,20 @@
 $(document).on('ready page:change', function() {
 
+  // demo code
+  $("#add-doctor-title").click(function() {
+    $("#doctor_name").val("John");
+    
+    setTimeout(function() {
+    $("#doctor_name").val("John Pargulski");
+    $("#doctor_address").val("1301 Penn Ave Ste 213");
+    $("#doctor_city").val("Des Moines");
+    $("#doctor_state").val("IA");
+    $("#doctor_phone").val("(515) 263-9696");
+    },1500);
+    
+  });
+  
+  // CareFinder integration for doctor info lookup
 	$(".doctor-autocomplete").typeahead({
 	  matcher: function(item) { return true; },
 		source: function(query, process) {
