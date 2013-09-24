@@ -14,11 +14,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
     self.resource = build_resource(sign_up_params)
     self.resource.role_ids = [Role.find_by_name(:patient.to_s).id] # only patients will sign up
     self.resource.care_circles.build()
-
+    
     if resource.save
       if resource.active_for_authentication?
         set_flash_message :notice, :signed_up if is_navigational_format?
         sign_up(resource_name, resource)
+         # set care circle id
+         session[:care_circle_id] = current_user.care_circles.first
         respond_with resource, :location => after_sign_up_path_for(resource)
       else
         set_flash_message :notice, :"signed_up_but_#{resource.inactive_message}" if is_navigational_format?
