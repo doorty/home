@@ -339,6 +339,10 @@ $fluidGridGutterWidth768:      percentage($gridGutterWidth768/$gridRowWidth768) 
           box-sizing: border-box;
 }
 
+.dropdown-menu {
+  //left:auto;
+}
+
 body.dashboard {
   
   .left-nav {
