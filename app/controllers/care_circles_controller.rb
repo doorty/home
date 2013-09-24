@@ -17,9 +17,9 @@ class CareCirclesController < ApplicationController
   # GET /care_circles/1
   # GET /care_circles/1.json
   def show
-  #  if (params[:id])
-  #	  session[:care_circle_id] = params[:id]
-  #	end
+  if (params[:id])
+    session[:care_circle_id] = params[:id]
+  end
   	
   	@care_circle = current_care_circle
   	
