@@ -31,7 +31,8 @@
 	<div class="span6">
 	
 		<h2>Import Friends & Family</h2>
-		<%- if friends = current_user.fb_friends %>
+		<%- if current_user.fb_friends.nil? == false %>
+		  <% friends = current_user.fb_friends %>
 			<%= form_tag "invite_fb_friends" do %>
 				<div style="height:300px; overflow:auto;">
 				

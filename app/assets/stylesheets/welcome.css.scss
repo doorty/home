@@ -7,6 +7,10 @@ body.welcome {
   padding-top: 20px;
   padding-bottom: 40px;
   
+  h1, h2 {
+    color:#333;
+  }
+  
   /* Custom container */
   .container-narrow {
     margin: 0 auto;
