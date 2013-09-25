@@ -1,3 +1,18 @@
 // Place all the styles related to the myWellmark controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+img {
+  &.logo {
+    padding:0 0 20px 0;
+  }
+  &.claims {
+    padding:0 0 10px 0;
+  }
+  &.facility {
+    padding:0 5px 0 0;
+  }
+  &.messages {
+    padding:0 0 0 0;
+  }
+}

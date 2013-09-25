@@ -339,6 +339,10 @@ $fluidGridGutterWidth768:      percentage($gridGutterWidth768/$gridRowWidth768) 
           box-sizing: border-box;
 }
 
+h1, h2 {
+  color:$gray;
+}
+
 .dropdown-menu {
   //left:auto;
 }
