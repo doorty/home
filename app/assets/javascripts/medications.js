@@ -3,11 +3,11 @@ $(document).on('ready page:change', function() {
   // demo code
   $("#add-medication-title").click(function() {
 
-    $("#medication_name").val("CIALIS");
+    $("#medication_name").val("Metformin");
     $("#medication_strength").val("10 mg");
     $("#medication_dosage").val("1 capsule");
     $("#medication_doctor_id>option:eq(1)").prop('selected', true);
-    $("#medication_medication_reminders_attributes_0_time").val("10:00 AM");
+    $("#medication_medication_reminders_attributes_0_time").val("1:00 PM");
     $("#medication_medication_reminders_attributes_0_days_monday").attr('checked', true);
     $("#medication_medication_reminders_attributes_0_days_wednesday").attr('checked', true);
     $("#medication_medication_reminders_attributes_0_days_friday").attr('checked', true);

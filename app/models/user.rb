@@ -28,19 +28,21 @@ class User < ActiveRecord::Base
 	accepts_nested_attributes_for :profile
 	
 	def facebook
-		@facebook ||= Koala::Facebook::API.new(self.authentications.find_by_provider('facebook').try(:oauth_token))
+	  token = self.authentications.find_by_provider('facebook').try(:oauth_token)
+		@facebook ||= Koala::Facebook::API.new(token) if token
 		block_given? ? yield(@facebook) : @facebook
 		rescue Koala::Facebook::APIError => e
-		logger.info e.to_s
+		logger.info "facebook error: #{e.to_s}"
 		nil # or consider a custom null object
 	end
 	
 	# get user's facebook friends
 	def fb_friends
 	  facebook { |fb| 
-	  	fb.get_connection("me", "friends").sort { |a,b| a["name"].downcase <=> b["name"].downcase }.each do |f|
+	  	fb.get_connection("me", "friends").sort { |a,b| a["name"].downcase <=> b["name"].downcase } if fb
+			#fb.get_connection("me", "friends").sort { |a,b| a["name"].downcase <=> b["name"].downcase }.each do |f|
 			#  f["image"]= fb.get_picture(f["id"])
-			end
+			#end
 	  }
 	end
 	

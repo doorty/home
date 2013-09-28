@@ -7,12 +7,18 @@ img {
     padding:0 0 20px 0;
   }
   &.claims {
-    padding:0 0 10px 0;
+  	width:632px;
+  	height:231px;
+    //padding:0 0 10px 0;
   }
   &.facility {
-    padding:0 5px 0 0;
+  	width:322px;
+		height:608px;
+    //padding:0 5px 0 0;
   }
   &.messages {
-    padding:0 0 0 0;
+  	width:312px;
+  	height:332px;
+    //padding:0 0 0 0;
   }
 }

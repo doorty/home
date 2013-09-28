@@ -39,7 +39,7 @@
                 <li class="dropdown hidden-phone">
                   <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user-md icon-large"></i> Case Manager <b class="caret"></b></a>
                   <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="drop1">
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class="icon-phone icon-large"></i>&nbsp; Call: 1-800-555-2345</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class="icon-phone icon-large"></i>&nbsp; Call: 1-800-724-9122</a></li>
                     <li role="presentation"><a role="menuitem" tabindex="-1" href="#invite"><i class="icon-user-md icon-large"></i>&nbsp; Invite Case Manager</a></li>
                   </ul>
                 </li>
@@ -47,12 +47,12 @@
                 <li class="hidden-phone">
                   <a id="call-case-manager-desktop" href="javascript:void(0);">
                     <span class="call"><i class="icon-phone icon-large"></i> Call Case Manager</span>
-                    <span class="number "><i class="icon-phone icon-large"></i> 1-800-867-5309&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <span class="number "><i class="icon-phone icon-large"></i> 1-800-724-9122&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                   </a>
                 </li>
               -->
                 <li class="visible-phone">
-                  <a id="call-case-manager-mobile" href="tel:1-800-867-5309">
+                  <a id="call-case-manager-mobile" href="tel:1-800-724-9122">
                     <span class="call"><i class="icon-phone icon-large"></i> Case Manager: 1-800-867-5309</span>
                   </a>
                 </li>
@@ -119,9 +119,10 @@
                     <li class="home <%= 'active' if is_dashboard? %>"><%= link_to care_circles_path  do %><i class="icon-home icon-large"></i>HOME <% end %></li>
   			      
         			      <li class="divider"></li>
-                    <li class="nav-header first">Mom's CarePlan</li>
+                    <li class="nav-header first">CarePlan</li>
                     <li class=""><%= link_to "Doctors", care_circle_doctors_path(current_care_circle) %></li>
                     <li class=""><%= link_to "Medications", care_circle_medications_path(current_care_circle) %></li>
+                    <li class=""><%= link_to "Caregivers", '#' %></li>
                     <li class=""><%= link_to "Notes", care_circle_notes_path(current_care_circle) %></li>
                     <li class=""><%= link_to "Charts", care_circle_charts_path(current_care_circle) %></li>
                     <li class=""><%= link_to "myWellmark", my_wellmark_index_path(current_care_circle) %></li>
@@ -152,9 +153,10 @@
   			      <li class="home <%= 'active' if is_dashboard? %>"><%= link_to care_circles_path  do %><i class="icon-home icon-large"></i>HOME <% end %></li>
   			      
   			      <li class="divider"></li>
-              <li class="nav-header first">Mom's CarePlan</li>
+              <li class="nav-header first">CarePlan</li>
               <li class="<%= 'active' if is_doctor_tab? %>"><%= link_to "Doctors", care_circle_doctors_path(current_care_circle) %></li>
               <li class="<%= 'active' if is_medications_tab? %>"><%= link_to "Medications", care_circle_medications_path(current_care_circle) %></li>
+              <li class=""><%= link_to "Caregivers", 'javascript:void(0);' %></li>
               <li class="<%= 'active' if is_notes_tab? %>"><%= link_to "Notes", care_circle_notes_path(current_care_circle) %></li>
               <li class="<%= 'active' if is_charts_tab? %>"><%= link_to "Charts", care_circle_charts_path(current_care_circle) %></li>
               <li class="<%= 'active' if is_my_wellmark_tab? %>"><%= link_to "myWellmark", my_wellmark_index_path(current_care_circle) %></li>

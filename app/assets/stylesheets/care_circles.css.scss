@@ -33,6 +33,23 @@
     	&.status-new {
     	  form {
       	  margin-bottom: 0;
+      	  .status-box {
+	      	  position: relative;
+	      	  button.concern-circle {
+		      	  position: absolute;
+		      	  width:200px;
+		      	  bottom:0;
+		      	  right: 0;
+		      	  input {
+			      	  
+		      	  }
+	      	  }
+	      	  button.photo {
+		      	  position: absolute;
+		      	  bottom:0;
+		      	  right:200px;
+	      	  }
+      	  }
     	  }
     	  textarea {
       	  width:100%;

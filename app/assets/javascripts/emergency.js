@@ -12,8 +12,23 @@ window.onload = loadScript;
 $(document).on('ready page:change', function() {
 
 	var map;
+	var googleMapsLoaded = false;
+	
+	// for demo purposes, check if internet connection active otherwise display image
+	setTimeout(function() {
+	
+	  if (!googleMapsLoaded) {
+  	  $("#emergency-map-canvas-image").removeClass("hidden");
+	  }
+	
+	}, 3000);
 	
 	window.emergencyInitMapCallback = function() {
+	  
+	  googleMapsLoaded = true;
+	  
+	  $("#emergency-map-canvas").removeClass("hidden");
+	  
 	  var mapOptions = {
 	    zoom: 11,
 	    center: new google.maps.LatLng(41.585667, -93.634177),

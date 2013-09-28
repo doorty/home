@@ -1,18 +1,24 @@
 <div class="container-fluid">
 
-	<h1 class="row-fluid">Emergency</h1>
-
+	<h1 class="row-fluid">Emergency & Urgent Care locations near Mom</h1>
+	<hr/>
+	<p class="row-fluid" style="color:red;"><i class="icon-ambulance"></i> Emergency: Call 911 immediately for any life-threatening emergency</p>
+	<p class="row-fluid" style="color:blue;"><i class="icon-user-md"></i> Wellmark Nurse:  800-123-1234  Help and advice 24 hours day</p>
+	<hr/>
 	<div class="row-fluid">
 		<form class="form-search">
 		  <div class="input-append">
-		    <input type="text" class="search-query" placeholder="Search for facility">
+		    <input type="text" class="search-query input-xlarge" placeholder="Search for facility">
 		    <button type="submit" class="btn">Search</button>
 		  </div>
 		</form>
 	</div>
 	
 	<div class="row-fluid">
-		<div id="emergency-map-canvas" class="span12" style="height:300px;"></div>
+		<div id="emergency-map-canvas" class="span12 hidden" ></div>
+		<div id="emergency-map-canvas-image" class="span12 hidden">
+		  <%= image_tag("/images/demo/map-offline.png") %>
+		</div>
 	</div>
 	
 </div>
