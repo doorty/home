@@ -2,7 +2,7 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :name,:input_html => { :autocomplete => "off", :class => "doctor-autocomplete" }, :placeholder => "John Doe", :hint => "Automatically lookup doctor information with CareFinder" %>
+    <%= f.input :name,:input_html => { :autocomplete => "off", :class => "doctor-autocomplete" }, :placeholder => "John Doe", :hint => "Autocomplete via <span style='color:#0087BD'>Wellmark CareFinder</span>" %>
     <%= f.input :address %>
     <%= f.input :city %>
     <%= f.input :state, collection: us_states %>
