@@ -27,7 +27,27 @@
           
       &.medication {
         padding: 5px 10px;
-    	  background:#ffd8d8;
+    	  background:#fcd9ff;
+    	}
+    	
+    	&.star {
+	    	background:#fcffc4;
+    	}
+    	
+    	&.hug {
+	    	background:#ffd8d8;
+	    	h4 {
+		    	span {
+			    	color:red;
+		    	}
+	    	}
+    	}
+    	
+    	&.case-manager-complete {
+	    	background:#c1ffe0;
+	    	td {
+		    	min-width: 200px;
+	    	}
     	}
     	
     	&.status-new {
@@ -65,7 +85,7 @@
     	
     	&.appointment {
       	padding: 5px 10px;
-    	  background: #ffd88b;
+    	  background: #8cfffd;
     	}
     	
     	&.note {

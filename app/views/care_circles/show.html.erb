@@ -1,8 +1,8 @@
 <div id="dashboard-home">
   
   <div class="clearfix header">
-  
-    <h1 class="pull-left" style="">Care for Mom <i class="icon-smile" style="color:green;"></i></h1>
+
+      <h1 class="pull-left">Care for Mom <i class="icon-smile" style="color:green;"></i></h1>
     
     <div class="options pull-right" style="">
     	<%= link_to(new_care_circle_appointment_path(@care_circle), id: "new-appointment-link", :class => "btn btn-small pull-left", :style => "margin-right:10px;") do %>
@@ -72,31 +72,83 @@
   				</li>
   		<% end %>
   	<% end %>
-  	<li class="media medication thumbnail">
-  		<label class="checkbox">
-        <input type="checkbox"> <h4>Take Asprin: Take 10mg at maximum strength (05:38 PM)</h4>
-      </label>
-  	</li>
-  	<li class="media status">
+  	<li class="media star thumbnail">
+  		<a class="pull-left thumbnail" href="#">
+  			<i class="icon-star" style="font-size:40px;color:orange;"></i>
+	    </a>
+			<div class="media-body">
+				<p>
+					<h4 class="media-heading">Breakfast Tip! Try whole grain cereal with skim milk or eggs and whole wheat toast with margarine today.</h4>
+				</p>
+			</div>
+		</li>
+		<li class="media status">
       <a class="pull-left thumbnail" href="#">
         <%= image_tag("/images/demo/mom-square-1.jpg", :class => "media-object", :width => "64", :height => "64") %>
       </a>
       <div class="media-body thumbnail">
         <h5 class="media-heading">Mom</h5>
-        <p>Hi honey, I need the gutters cleaned for winter, some boxes moved from the basement and some light bulbs changed.</p>
+        <p>Hi honey, I have an appointment with Dr. Pargulski on Tuesday at 2pm. I need a ride. Can you arrange transportation?</p>
    
         <!-- Nested media object -->
         <hr>
-        <div class="media status">
+        <div class="media status thumbnail">
           <a class="pull-left thumbnail" href="#" style=" background-color: #fff; ">
-  		      <%= image_tag("/images/demo/guy-square-1.jpg", :class => "media-object", :width => "64", :height => "64") %>
+  		      <%= image_tag("/images/demo/evin-square-1.jpg", :class => "media-object", :width => "64", :height => "64") %>
   		    </a>
   		    <div class="media-body">
-  		      <h5 class="media-heading">James Withers</h5>
-  		      <p>I'll have someone come over this week. </p>
+  		      <h5 class="media-heading">Evin Ollinger</h5>
+  		      <p>Hi Mom, I will have a driver pick up at 1:30pm to take you to the doctor.</p>
   				</div>
       </div>
     </li>
+  	<li class="media hug thumbnail">
+  		<a class="pull-left thumbnail" href="#">
+	      <i class="icon-heart" style="font-size:40px;color:red;"></i>
+	    </a>
+			<div class="media-body">
+				<p>
+					<h4 class="media-heading">Aunt Mary sends you a <span>hug</span> and has added a picture to your CareWall. </h4>
+				</p>
+			</div>
+		</li>
+		<li class="media appointment thumbnail">
+  		<a class="pull-left thumbnail" href="#">
+  			<%= image_tag("/images/demo/case-manager.png", :class => "media-object", :width => "64", :height => "64") %>
+	    </a>
+			<div class="media-body">
+				<p>
+					<h4 class="media-heading">Martha, you have a Physical Therapy appointment scheduled on Wednesday 10/2/13 at 2:00 at your house. </h4>
+				</p>
+			</div>
+		</li>
+  	<li class="media case-manager-complete thumbnail">
+  		<a class="pull-left thumbnail" href="#">
+	      <%= image_tag("/images/demo/caregiver-square-2.jpg", :class => "media-object", :width => "64", :height => "64") %>
+	    </a>
+			<div class="media-body">
+	      <h5 class="media-heading">Caregiver Task Completed - 9/28 3:30 PM</h5>
+	      <p>Your mom is a gem! I prepared meals for the next two days, brushed her hair, and we played cards.</p>
+	      <p>
+		      <table>
+		      	<tbody>
+		      		<tr>
+		      			<td>Weight: <b><%= link_to "170lbs", "#" %></b></td>
+		      			<td>Picture: <b><%= link_to "View Picture", "#" %></b></td>
+		      		</tr>
+		      		<tr>
+		      			<td>Payment: <b>$100</b></td>
+		      			<td>Time: 5 hours</td>
+		      		</tr>
+		      	</tbody>
+		      </table>
+	      </p>
+	      <p>
+	      	<button class="btn btn-success" type="button"><i class="icon-thumbs-up"></i> Approve</button> 
+	      	<button class="btn" type="button"><i class="icon-zoom-in"></i> Review</button> 
+	      </p>
+			</div>
+		</li>
   </ul>
 
 
