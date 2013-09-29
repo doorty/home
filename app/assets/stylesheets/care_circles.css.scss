@@ -32,10 +32,18 @@
     	
     	&.star {
 	    	background:#fcffc4;
+	    	.thumb {
+		    	padding:5px;
+		    	text-decoration: none;
+	    	}
     	}
     	
     	&.hug {
 	    	background:#ffd8d8;
+	    	.thumb {
+		    	padding:5px;
+		    	text-decoration: none;
+	    	}
 	    	h4 {
 		    	span {
 			    	color:red;
