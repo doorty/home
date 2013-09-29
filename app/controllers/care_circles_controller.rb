@@ -125,19 +125,19 @@ class CareCirclesController < ApplicationController
 			care_circle = @care_circle
 			limit = 10
 			activities = []
-			activities += care_circle.statuses.all(:order => 'created_at DESC', :limit => limit).map do |status|
+			activities += care_circle.statuses.all(:limit => limit).map do |status|
 			  Activity.new(:status, current_user.profile.name, status.message, status.created_at)
 			end
 			
-			activities += care_circle.appointments.all(:order => 'date DESC', :limit => limit).map do |appointment|
+			activities += care_circle.appointments.all(:limit => limit).map do |appointment|
 			  Activity.new(:appointment, appointment.title, nil, appointment.date)
 			end
 			
-			activities += care_circle.notes.all(:order => 'created_at DESC', :limit => limit).map do |note|
+			activities += care_circle.notes.all(:limit => limit).map do |note|
 			  Activity.new(:note, note.content, nil, note.created_at)
 			end
 			
-			activities += care_circle.medications.all(:order => 'created_at DESC', :limit => limit).map do |medication|
+			activities += care_circle.medications.all(:limit => limit).map do |medication|
 			  Activity.new(:medication, medication.name, "Take #{medication.dosage} at #{medication.strength}", medication.medication_reminders.first.try(:time))
 			end
 			
