@@ -125,7 +125,6 @@ class CareCirclesController < ApplicationController
 			care_circle = @care_circle
 			limit = 10
 			activities = []
-			sorted_activities = []
 			activities += care_circle.statuses.all(:order => 'created_at DESC', :limit => limit).map do |status|
 			  Activity.new(:status, current_user.profile.name, status.message, status.created_at)
 			end
@@ -147,15 +146,10 @@ class CareCirclesController < ApplicationController
 			# end
 			
 			# descending sort by 'date' field
-			
-			sorted_activities = activities.sort_by(&:date).reverse if activities.nil? == false
+			sorted_activities = activities.sort_by(&:date).reverse
 			
 			# 10 most recent elements across all models
-			if sorted_activities.length > 0
-				return sorted_activities[0..(limit-1)]
-			else
-				return sorted_activities
-			end
+			return sorted_activities[0..(limit-1)]
     end
     
 end
