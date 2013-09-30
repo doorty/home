@@ -146,7 +146,7 @@ class CareCirclesController < ApplicationController
 			# end
 			
 			# descending sort by 'date' field
-			sorted_activities = activities.sort_by(&:date).reverse
+			sorted_activities = activities.reverse
 			
 			# 10 most recent elements across all models
 			return sorted_activities[0..(limit-1)]
