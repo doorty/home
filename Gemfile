@@ -13,6 +13,9 @@ group :development, :test do
   gem 'sqlite3'
 end
 
+# New Relic email: brentd49@gmail.com
+gem 'newrelic_rpm'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
