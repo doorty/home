@@ -133,9 +133,9 @@ class CareCirclesController < ApplicationController
 			  Activity.new(:appointment, appointment.title, nil, appointment.date)
 			end
 			
-			activities += care_circle.notes.all(:order => 'created_at DESC', :limit => limit).map do |note|
-			  Activity.new(:note, note.content, nil, note.created_at)
-			end
+# 			activities += care_circle.notes.all(:order => 'created_at DESC', :limit => limit).map do |note|
+# 			  Activity.new(:note, note.content, nil, note.created_at)
+# 			end
 			
 			activities += care_circle.medications.all(:order => 'created_at DESC', :limit => limit).map do |medication|
 			  Activity.new(:medication, medication.name, "Take #{medication.dosage} at #{medication.strength}", medication.medication_reminders.first.try(:time))
