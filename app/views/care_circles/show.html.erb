@@ -43,7 +43,7 @@
   			<% when (activity.type == :medication) %>
   				<li class="media medication thumbnail">
   					<label class="checkbox">
-  			      <input type="checkbox"> <h4>Take <%= activity.title %>: <%= activity.text %> (<%= activity.date.strftime("%I:%M %p") %>)</h4>
+  			      <input type="checkbox"> <h4>Take <%= activity.title %>: <%= activity.text %> (<%= activity.date.try { |d| d.strftime("%I:%M %p") } %>)</h4>
   			    </label>
   				</li>
   			<% when (activity.type == :status) %>
